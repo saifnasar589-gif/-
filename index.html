@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100b24">
+<title>سر صغير بين سيف ولين 💗</title>
+<style>
+:root{--pink:#ff8fce;--pale:#ffe0f1;--bg:#100b24;--card:rgba(255,255,255,.085)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;background:radial-gradient(ellipse at 50% 0%,#39205d 0%,#17102f 43%,var(--bg) 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.6;background-image:radial-gradient(2px 2px at 10% 20%,#fff 50%,transparent 60%),radial-gradient(1px 1px at 70% 16%,#fff 50%,transparent 60%),radial-gradient(2px 2px at 86% 40%,#ffbde5 50%,transparent 60%),radial-gradient(1px 1px at 23% 66%,#fff 50%,transparent 60%),radial-gradient(2px 2px at 53% 83%,#fff 50%,transparent 60%);background-size:280px 240px}
+.wrap{width:min(720px,92%);margin:auto;padding:34px 0 50px;position:relative}
+.moon{font-size:48px;filter:drop-shadow(0 0 20px #ffe8a5);text-align:center;margin:8px auto}
+h1{text-align:center;font-size:clamp(27px,6vw,43px);line-height:1.35;margin:8px 0;color:#ffd9f0}
+.subtitle{text-align:center;color:#e8d9f5;line-height:1.9;margin:0 auto 24px;max-width:520px}
+.panel{background:var(--card);border:1px solid #ffffff24;border-radius:24px;padding:24px;box-shadow:0 18px 55px #0003;backdrop-filter:blur(8px)}
+.eyebrow{text-align:center;color:var(--pink);font-size:13px;letter-spacing:1px}
+h2{text-align:center;font-size:24px;margin:10px 0 14px}
+p{line-height:2;text-align:center;color:#f7eafa}
+button{font:inherit;cursor:pointer;border:0;border-radius:16px;padding:13px 18px;font-weight:700;transition:transform .15s,filter .15s}
+button:active{transform:scale(.98)}
+.primary{display:block;margin:20px auto 0;color:#32152c;background:linear-gradient(135deg,#ffd5ee,#ff8fce);box-shadow:0 8px 25px #ff8fce30}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
+.choice{min-height:100px;color:white;background:linear-gradient(145deg,#ffffff18,#ffffff08);border:1px solid #ffb8e444;font-size:17px}
+.choice span{display:block;font-size:28px;margin-bottom:7px}
+.hidden{display:none!important}
+.note{border-right:3px solid var(--pink);background:#ffb8e410;padding:16px 18px;border-radius:12px;margin-top:18px;line-height:2;color:#fff0fa;text-align:center}
+.footer{text-align:center;color:#c9b7dc;font-size:12px;margin-top:24px}
+.hearts{font-size:24px;text-align:center;letter-spacing:8px;margin:10px}
+.back{display:block;margin:14px auto 0;background:transparent;border:1px solid #ffffff3d;color:#fce7f5}
+@media(max-width:420px){.panel{padding:18px}.choices{gap:9px}.choice{font-size:15px;padding:12px 8px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="moon" aria-hidden="true">🌙</div>
+  <h1>سر صغير بين سيف ولين</h1>
+  <p class="subtitle">بسبوستي، عندي لج شي صغير من كلبي…<br>اختاري قلب واكتشفي شنو مخبّيلج حبيبج 💗</p>
+
+  <section class="panel" id="welcome">
+    <div class="eyebrow">رسالة خاصة إلج وحدج ✨</div>
+    <h2>مستعدة يا روحي؟</h2>
+    <p>ماكو هدية بالدنيا توصف مكانج عندي، بس حبيت أسويلج لحظة صغيرة تبتسمين بيها، وتحسين شكد إنتِ غالية على سيف.</p>
+    <div class="hearts">♡ ♥ ♡</div>
+    <button class="primary" id="start">يلا أكتشف المفاجأة 💌</button>
+  </section>
+
+  <section class="panel hidden" id="picker">
+    <div class="eyebrow">اختاري بقلبج 💞</div>
+    <h2>أي قلب تنادين عليه؟</h2>
+    <p>كل قلب مخبّي إلج كلمة من سيف… اختاري واحد.</p>
+    <div class="choices">
+      <button class="choice" data-note="0"><span>💗</span>قلب الدلع</button>
+      <button class="choice" data-note="1"><span>🌙</span>قلب الليل</button>
+      <button class="choice" data-note="2"><span>🫶</span>قلب الأمان</button>
+      <button class="choice" data-note="3"><span>💌</span>قلب السر</button>
+      <button class="choice" data-note="4"><span>✨</span>قلب الأمنيات</button>
+      <button class="choice" data-note="5"><span>❤️</span>قلب سيف</button>
+    </div>
+  </section>
+
+  <section class="panel hidden" id="reveal" aria-live="polite">
+    <div class="eyebrow">هاي الكلمة إلج وحدج 💖</div>
+    <h2 id="noteTitle">من سيف إلى لين</h2>
+    <p id="noteText"></p>
+    <div class="hearts">💗 🌙 💗</div>
+    <button class="primary" id="another">أختار قلب ثاني 🥹</button>
+    <button class="back" id="finalBtn">أريد آخر مفاجأة ❤️</button>
+  </section>
+
+  <section class="panel hidden" id="final">
+    <div class="eyebrow">آخر مفاجأة… من كلبي لكلبج</div>
+    <h2>لين، إنتِ مو شخص عادي بحياتي ❤️</h2>
+    <p>إنتِ ضحكتي الحلوة، والاسم اللي يخليني أبتسم من أشوفه، والإنسانة اللي أتمنى أشوف الفرح بعيونها دوم.</p>
+    <p>يمكن ما أگدر أكون يمج هسه وأمسك إيدج، بس أگدر أخليج تعرفين إنج على بالي، وإن كل هالتفاصيل سويتها لأنج تستاهلين شي حلو يشبه قلبج.</p>
+    <div class="note">من سيف لبسبوسته: أحبج، وأتمنى هاللحظة خلتج تبتسمين ولو شوي. إنتِ حبيبتي، ودوم أتمنى أشوفج مبسوطة. 🥹💗</div>
+    <button class="primary" id="restart">أعيد المفاجأة من البداية 🌙</button>
+  </section>
+  <div class="footer">صُنعت بكل حب لسيف ولين · ♡</div>
+</main>
+<script>
+const notes=[
+ ["يا دلع سيف 💗","بسبوستي يا عمري، شكد أحب من أدلعج وأشوفج تبتسمين. لو بيدي أخلي كل لحظة بحياتج حلوة، جان سويتها."],
+ ["إنتِ قمري 🌙","حتى لو بيناتنا مسافات، أحب فكرة إن إحنا نكدر نحچي تحت نفس السما. إنتِ من الأشياء الحلوة اللي صارت بحياتي."],
+ ["مكانج آمن 🫶","أريدج تعرفين إن مشاعرج تهمني، وإنج تستاهلين أحد يسمعج ويحتويج ويهتم بتفاصيلج. أتمنى أكون سبب راحة لقلبج."],
+ ["سرّي الصغير 💌","إذا سألتيني شنو أحب بيج، يمكن ما أعرف أختصرها بكلمة… أحب ضحكتج، سوالفج، ودلعج، وحتى التفاصيل الصغيرة اللي يمكن إنتِ ما تنتبهين إلها."],
+ ["أمنيتي إلج ✨","أتمنى أيامج الجاية تكون أخف وأحلى، وتتحقق الأشياء اللي تتمنينها، وأشوفج دوم تضحكين من قلبج يا روحي."],
+ ["من قلب سيف ❤️","لو أگدر أرسل لج شعوري بدل الكلام، جان عرفتي شكد مكانج كبير عندي. أحبج يا لين، وأحب إن هالشي الحلو بيناتنا إله حكاية تخصنا إحنا الاثنين."]
+];
+const $=id=>document.getElementById(id);
+function show(id){["welcome","picker","reveal","final"].forEach(x=>$(x).classList.toggle("hidden",x!==id));}
+$("start").addEventListener("click",()=>show("picker"));
+document.querySelectorAll("[data-note]").forEach(b=>b.addEventListener("click",()=>{const n=notes[Number(b.dataset.note)];$("noteTitle").textContent=n[0];$("noteText").textContent=n[1];show("reveal");}));
+$("another").addEventListener("click",()=>show("picker"));
+$("finalBtn").addEventListener("click",()=>show("final"));
+$("restart").addEventListener("click",()=>show("welcome"));
+</script>
+</body>
+</html>
